@@ -18,6 +18,7 @@ __version__ = "1.1"
 # Variable global utilizada para el ejercicio de nota
 notas = [70, 82, -1, 65, 55, 67, 87, 92, -1]
 
+
 # Variable global utilizada para el ejercicio de temperaturas
 temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
                   14.7, 19.6, 11.2, 18.4]
@@ -37,31 +38,98 @@ def ej1():
 
     # inicio = ....
     # fin = ....
-
     # cantidad_numeros ....
     # sumatoria ....
-
     # bucle.....
-
     # Al terminar el bucle calcular el promedio como:
     # promedio = sumatoria / cantidad_numeros
-
     # Imprimir resultado en pantalla
+    inicio = int(input('Ingrese el primer número de la secuencia\n'))
+    fin = int(input('ingrese numero mayor o igual al anterior\n'))
+    lista_1 = list(range(inicio,fin))
+    list(range(len(lista_1)))
+    cantidad = list(range(len(lista_1)))
+    tot_elem = 0
+    for n in lista_1:
+        tot_elem += 1
+    print ('numeros ingresados :', tot_elem)
+
+    for numbers in range(inicio, fin):
+        lista1 = [ [inicio, fin] ]
+        cantidad = list(range(len(lista_1)))
+        total = len(cantidad)
+        nume=0
+        for i in lista1:
+            for m in i:
+                nume += m
+    print('suma de numeros :',nume)
+    promedio = nume/tot_elem
+    print('el promedio es :',promedio)
+               
+            
+
+
 
 
 def ej2():
     print("Mi Calculadora (^_^)")
 
     '''
-    Tome el ejercicio de clase:
-    <condicionales_python /  ejercicios_profundizacion / ej3>,
-    copielo a este ejercicio y modifíquelo, ahora se deberá ejecutar
-    indefinidamente hasta que como operador se ingrese la palabra "FIN",
-    en ese momento debe terminar el programa
-
+    Realice una calculadora:
+    Dentro de un bucle se debe ingresar por línea de comando dos números
+    Luego se ingresará como tercera entrada al programa el símbolo de la operación
+    que se desea ejecutar:
+    - Suma (+)
+    - Resta (-)
+    - Multiplicación (*)
+    - División (/)
+    - Exponente/Potencia (**)
+    Se debe efectuar el cálculo correcto según la operación ingresada por consola
+    Imprimir en pantalla la operación realizada y el resultado
+    El programa se debe repetir dentro del bucle hasta que como operador
+    se ingrese la palabra "FIN", en ese momento debe terminar el programa
     Se debe debe imprimir un cartel de error si el operador ingresado no es
-    alguno de lo soportados o no es la palabra "FIN"
-    '''
+     '''
+    s = int(input('ingrese primer valor\n'))
+    e = int(input('ingrese segundo valor\n'))
+    print('ingrese el numero equivalente al simbolo de operacion deseada')
+    
+    
+
+    Suma = (s + e)
+    Resta = (s - e)
+    Multiplicación = (s * e)
+    División = (s/e)
+    Potencia = (s**e)
+    
+
+    
+    
+    while True: 
+        
+            op = input('1-suma\n 2-Resta\n 3-multiplicar\n 4-dividir\n 5-potencia\n FIN\n')
+        
+            if op == '1':
+                print(Suma)
+                break
+            elif op == '2':
+                print(Resta)
+                break
+            elif op == '3':
+                print(Multiplicación)
+                break
+            elif op == '4':   
+                print(División)
+                break
+            elif op== 'FIN':
+                break
+            else:
+                print('numero erroneo')
+            
+        
+            
+
+
 
 
 def ej3():
@@ -85,24 +153,60 @@ def ej3():
 
     Debe contar la cantidad de notas válidas y la cantidad de ausentes
     '''
-
+    # Si el puntaje es mayor igual a 90 --> imprimir A
+    # Si el puntaje es mayor igual a 80 --> imprimir B
+    # Si el puntaje es mayor igual a 70 --> imprimir C
+    # Si el puntaje es mayor igual a 60 --> imprimir D
+    # Si el puntaje es manor a  60      --> imprimir F
     # Para calcular el promedio primero debe obtener la suma
     # de todas las notas, que irá almacenando en esta variable
-    sumatoria = 0           # Ya le hemos inicializado en 0
+    sumatoria = 0                # Ya le hemos inicializado en 0
 
-    cantidad_notas = 0      # Aquí debe contar cuantas notas válidas encontró
-    cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
+    cantidad_notas = 0            # Aquí debe contar cuantas notas válidas encontró
+    cantidad_ausentes = 0         # Aquí debe contar cuantos ausentes hubo
+    x = (len(notas))
+
+    for numero in notas:
+        if numero > 0:
+            sumatoria = sumatoria + numero
+        
+        elif numero < 0:
+            cantidad_ausentes= cantidad_ausentes + numero
+    print('los dias no asisitidos fueron :',cantidad_ausentes)
+        
+    cantidad_notas= x + cantidad_ausentes
+    promedio= sumatoria/cantidad_notas
+    if promedio >= 90:
+        print ('a'.upper())
+    elif promedio>=80:
+        print('b'.upper())
+    elif promedio>=70:
+        print('la calificacion es c'.upper())
+    elif promedio <=60:
+        print('f'.upper())
+
 
     # Realice aquí el bucle para recorrer todas las notas
     # y cacular la sumatoria
-
     # Terminado el bucle calcule el promedio como
     # promedio = sumatoria / cantidad_notas
-
     # Utilice la nota promedio calculada y transformela
     # a calificación con letras, imprima en pantalla el resultado
-
     # Imprima en pantalla al cantidad de ausentes
+    
+    
+   
+            
+            
+
+
+
+
+
+   
+    
+     
+
 
 
 def ej4():
@@ -141,9 +245,35 @@ def ej4():
     temperatura_min = None      # Aquí debe ir almacenando la temp mínima
     temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
     temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
-    temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
+    temperatura_len = (len(temp_dataloger))  # Aquí debe almacenar cuantas temperatuas hay en la lista
+    
+    
+    
 
     # Colocar el bucle aqui......
+    for num in temp_dataloger:
+        if (temperatura_max is None or num > temperatura_max):
+            temperatura_max = num
+        elif (temperatura_min is None or num < temperatura_min):
+            temperatura_min = num
+    for numero in temp_dataloger:
+        if numero > 0:
+            temperatura_sumatoria = temperatura_sumatoria + numero
+        
+    temperatura_promedio = temperatura_sumatoria/temperatura_len
+    
+    for numero in temp_dataloger:
+        if numero > 8  < 14:
+            print('La epoca del año es \n invierno')
+        elif numero > 11 < 20:
+            print('La epoca del año es \n otoño')
+        elif numero > 10 < 24:
+            print('La epoca del año es \n primavera')
+        elif numero > 19 < 28:
+            print('la epoca del año es \n verano')
+    
+    
+    
 
     # Al finalizar el bucle compare si el valor que usted calculó para
     # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -245,7 +375,27 @@ def ej5():
        recorre la lista de palabras y busca la mayor según el motivo ingresado ("1" o "2")
 
   '''
+    pa_1 = (input('Ingrese primer palabra:\n'))
+    pa_2 = (input('Ingrese segunda palara:\n'))
+    pa_3 = (input('Ingrese tercer palabra:\n'))
+    lista = [pa_1,pa_2,pa_3]
+    alf = sorted(lista)
+    long = sorted(lista,key=len, reverse=True)
+    
+    
 
+
+
+
+
+
+
+
+    
+    
+        
+        
+    
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
