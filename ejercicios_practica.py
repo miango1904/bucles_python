@@ -67,7 +67,8 @@ def ej2():
     colores = ['rojo', 'naranja', 'verde', 'azul']
     for i in colores:
         print(i)
-
+    # Acá te faltó armar el otro for con el índice, así: 
+    # for i in range(len(colores)):
     
 
 
@@ -154,26 +155,15 @@ def ej5():
     inicio = int(input('Ingrese el primer número de la secuencia\n'))
     fin = int(input('ingrese numero mayor o igual al anterior\n'))
 
-    for numbers in range(inicio, fin):
+    for numbers in range(inicio, fin): # <--  Tener en cuenta que "range" no incluye el número de "fin" en su secuencia,
+           # sino que va hasta el anterior! for numbers in range(inicio,fin+1)
            lista1 = [ [inicio, fin] ]
            nume=0
            for i in lista1:
                for m in i:
                    nume += m
                
-               print('resultado',nume)
-               
-
-
-
-
-        
-        
-    
-        
-        
-    
-    
+               print('resultado',nume)    
 
 def ej6():
     # Ejercicio de secuencias numéricas
@@ -194,7 +184,7 @@ def ej6():
         positivos = 0
         negativos = 0
         nulos = 0
-        for numero in n:
+        for numero in n: # <-- Ojo que acá estás haciendo un for sobre el contenido de "n" y "n" es una lista que contiene un rango! (linea 179)
             if numero > 0:
                 positivos = numero
                 print(positivos)
@@ -205,6 +195,9 @@ def ej6():
                 nulos = numero
                 print(nulos)
     print(numero)
+    
+    # Revisa la lógica de este punto :D
+    
         
     
 
